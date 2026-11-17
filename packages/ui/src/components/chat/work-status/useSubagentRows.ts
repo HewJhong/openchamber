@@ -145,7 +145,7 @@ export const useSubagentRows = (sessionId: string | null, directory: string | nu
         done,
         finished,
         detached: !isSessionDirectoryAdmitted(resolveGlobalSessionDirectory(child), projects, worktrees),
-        identity: [child.agent, modelName].filter(Boolean).join(' · '),
+        identity: [child.agent, modelName, child.model?.variant].filter(Boolean).join(' · '),
         cost: perChildCost.get(child.id) ?? 0,
         tokens: sessionTokenTotal(child),
         run,
